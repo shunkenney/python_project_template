@@ -1,0 +1,62 @@
+[project]
+name = "<my_proj>"
+version = "0.0.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ""  # ">=3.11"
+dependencies = [
+    "hydra-core",  
+    "omegaconf",
+    "jaxtyping",
+    "wandb",
+    "beartype",
+    "viser>=1",
+
+    # Detail is here: https://pytorch.org/get-started/previous-versions/
+    #"torch==2.7.1+cu118",
+    #"torchvision==0.22.1+cu118",
+
+    # Libraries in git not in pypi. If you can check the implementation in /external/.
+    #"lib1",
+
+    # Libraries which require build with --no-build-isolation.
+    #"lib2",
+]
+
+
+[tool.setuptools]
+packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } }  # Flat layout.
+# If the project is structured as Src layout like
+#     my_proj/
+#     ├─ src/
+#     │  └─ my_proj/
+#     │     ├─ __init__.py
+#     │     └─ ... 
+# packages = { find = { where = ["src"], include = ["<my_proj>", "<my_proj>.*"] } }
+
+
+#[tool.uv.sources]
+#torch = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
+#torchvision = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
+#lib1 = { git = "<url/of/lib1_git_repo>", rev = "<commit ID>"}
+
+
+#[[tool.uv.index]]
+#name = "torch-cuda"
+#url = "https://download.pytorch.org/whl/cu118"
+#explicit = true
+
+
+[tool.uv]
+required-environments = [
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+#no-build-isolation-package = ["lib2"]
+
+
+#[[tool.uv.dependency-metadata]]
+#name = lib2
+
+
+# Reference
+# https://docs.astral.sh/uv/concepts/projects/layout/

@@ -1,1 +1,4 @@
-# python_project_template
+# How to setup
+```bash
+bash setup.sh
+```
