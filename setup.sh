@@ -1,5 +1,6 @@
+# Clone git repositories that you will edit source.
+git clone <url/of/lib3/git_repo> <my_proj>/submodules/<lib3>
+rm -rf <my_proj>/submodules/<lib3>/.git
+
 # Setup virtual env
 uv sync
-
-# Clone libraries which have "git = & rev = " at [tool.uv.sources] in pyproject.toml to /external/ directory.
-bash scripts/_auto_git_clone.sh
