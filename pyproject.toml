@@ -65,7 +65,7 @@ required-environments = [
 #lib3 = { requirement = ["", ""], match-runtime = true } # This will cause error somehow. Maybe problem of uv's version. 
 
 
-# If lib3 doesn't have [build-system] in pyproject.toml.
+# If lib3 doesn't have [build-system] in its pyproject.toml.
 #[[tool.uv.dependency-metadata]]
 #name = lib3
 
