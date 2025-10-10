@@ -2,3 +2,35 @@
 ```bash
 bash setup.sh
 ```
+
+# Project structure
+## Flat layout (for small project)
+```bash
+my_proj/
+    ├─ my_proj/
+    │   ├─ __init__.py
+    │   ├─ __main__.py
+    │   ├─ cli.py
+    │   ├─ _vendor/
+    │   :
+    │
+    ├─ config/
+    ├─ scripts/
+    ├─ .gitignore
+    ├─ README.md
+    └─ pyproject.toml
+
+```
+## Src layout (for big project)
+```bash
+my_proj/
+    ├─ src/
+    │   └─ my_proj/
+    │       ├─ __init__.py
+    │       ├─ __main__.py
+    :       :
+```
+
+# Emoji
+├─ └─ │
+✅❌🔥⚠️ℹ️🐛🚀😂❤️🤣😍😊🙏😘😎😢👍👏🎉🤔🙌😏😜😇🤗💕😱🤩🥰😔😌😴🤤🤮🤡💔🙇🤖
