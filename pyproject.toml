@@ -16,11 +16,15 @@ dependencies = [
     #"torch==2.7.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
     #"torchvision==0.22.1+cu118 : sys_platform == 'linux' and platform_machine == 'x86_64'",
 
-    # Libraries in git not in pypi. You can check the implementation in /external/.
+    # Libraries in git not in pypi.
     #"lib1",
 
-    # Libraries which require build with --no-build-isolation.
+    # Libraries in git not in pypi.
+    # If you want to run any scripts in the repo, this is robust.
     #"lib2",
+
+    # Libraries which require build with --no-build-isolation.
+    #"lib3",
 ]
 
 
@@ -39,6 +43,7 @@ packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } } 
 #torch = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
 #torchvision = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
 #lib1 = { git = "<url/of/lib1_git_repo>", rev = "<commit ID>"}
+#lib2 = { path = "<path/to/dir>/lib2", editable = true }
 
 
 #[[tool.uv.index]]
@@ -51,11 +56,11 @@ packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } } 
 required-environments = [
     "sys_platform == 'linux' and platform_machine == 'x86_64'",
 ]
-#no-build-isolation-package = ["lib2"]
+#no-build-isolation-package = ["lib3"]
 
 
 #[[tool.uv.dependency-metadata]]
-#name = lib2
+#name = lib3
 
 
 # Reference
