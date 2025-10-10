@@ -11,15 +11,15 @@ my_proj/
     │   ├─ __init__.py
     │   ├─ __main__.py
     │   ├─ cli.py
-    │   ├─ _vendor/
+    │   ├─ submodules/
     │   :
     │
     ├─ config/
     ├─ scripts/
     ├─ .gitignore
+    ├─ .gitmodules
     ├─ README.md
     └─ pyproject.toml
-
 ```
 ## Src layout (for big project)
 ```bash
