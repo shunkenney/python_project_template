@@ -47,7 +47,6 @@ packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } } 
 #lib3 = { path = "<path/to/dir>/lib3", editable = true }
 
 
-
 #[[tool.uv.index]]
 #name = "torch-cuda"
 #url = "https://download.pytorch.org/whl/cu118"
@@ -69,6 +68,14 @@ required-environments = [
 # If lib3 doesn't have [build-system] in pyproject.toml.
 #[[tool.uv.dependency-metadata]]
 #name = lib3
+
+
+# For pylance
+#[tool.pyright]
+#extraPaths = [
+#    "<my_proj>/submodules/<lib2>",
+#    "<my_proj>/submodules/<lib3>",
+#]
 
 
 # Reference
