@@ -7,7 +7,6 @@
 set -euo pipefail
 
 cd "$(dirname "$0")"
-uv sync
 mkdir -p external
 
 uv run python - <<'PY' | while IFS=$'\t' read -r name url rev; do
