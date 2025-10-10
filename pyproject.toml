@@ -63,6 +63,7 @@ required-environments = [
 
 #[tool.uv.extra-build-dependencies]
 #lib3 = ["", ""]  # Write build dependencies such as "setuptools", "wheel"
+#lib3 = { requirement = ["", ""], match-runtime = true } # This will cause error somehow. Maybe problem of uv's version. 
 
 
 # If lib3 doesn't have [build-system] in pyproject.toml.
