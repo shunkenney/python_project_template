@@ -8,15 +8,15 @@ dependencies = [
     "hydra-core",  
     "omegaconf",
     "jaxtyping",
-    "wandb",
     "beartype",
+    "wandb",
     "viser>=1",
 
     # Detail is here: https://pytorch.org/get-started/previous-versions/
     #"torch==2.7.1+cu118",
     #"torchvision==0.22.1+cu118",
 
-    # Libraries in git not in pypi. If you can check the implementation in /external/.
+    # Libraries in git not in pypi. You can check the implementation in /external/.
     #"lib1",
 
     # Libraries which require build with --no-build-isolation.
@@ -26,7 +26,7 @@ dependencies = [
 
 [tool.setuptools]
 packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } }  # Flat layout.
-# If the project is structured as Src layout like
+# If the project is structured as "src layout" like
 #     my_proj/
 #     ├─ src/
 #     │  └─ my_proj/
