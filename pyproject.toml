@@ -20,7 +20,7 @@ dependencies = [
     #"lib1",
 
     # Libraries in git not in pypi.
-    # If you want to run any scripts in the repo, this is robust.
+    # If you possibly edit the repo, clone it to my_proj/submodules/lib2 and run "rm -rf my_proj/submodules/lib2/.git
     #"lib2",
 
     # Libraries which require build with --no-build-isolation.
@@ -44,6 +44,8 @@ packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } } 
 #torchvision = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
 #lib1 = { git = "<url/of/lib1_git_repo>", rev = "<commit ID>"}
 #lib2 = { path = "<path/to/dir>/lib2", editable = true }
+#lib3 = { path = "<path/to/dir>/lib3", editable = true }
+
 
 
 #[[tool.uv.index]]
@@ -59,6 +61,11 @@ required-environments = [
 #no-build-isolation-package = ["lib3"]
 
 
+#[tool.uv.extra-build-dependencies]
+#lib3 = ["", ""]  # Write build dependencies such as "setuptools", "wheel"
+
+
+# If lib3 doesn't have [build-system] in pyproject.toml.
 #[[tool.uv.dependency-metadata]]
 #name = lib3
 
