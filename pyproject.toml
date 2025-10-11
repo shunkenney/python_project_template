@@ -14,7 +14,7 @@ dependencies = [
 
     # Detail is here: https://pytorch.org/get-started/previous-versions/
     #"torch==2.7.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
-    #"torchvision==0.22.1+cu118 : sys_platform == 'linux' and platform_machine == 'x86_64'",
+    #"torchvision==0.22.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
 
     # Libraries in git not in pypi.
     #"lib1",
