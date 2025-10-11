@@ -31,6 +31,8 @@ dependencies = [
     #"lib3",
 ]
 
+# If a conflict of composing top-level package occurred due to third party submodules,
+# uncomment this item to declare where top-level package is clearly.
 #[tool.setuptools]
 #packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } }  # Flat layout.
 # If the project is structured as "src layout" like
