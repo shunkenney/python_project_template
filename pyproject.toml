@@ -1,9 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "<my_proj>"
 version = "0.0.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ""  # ">=3.11"
+requires-python = ">=3.11"
 dependencies = [
     "hydra-core",  
     "omegaconf",
@@ -13,8 +17,8 @@ dependencies = [
     "viser>=1",
 
     # Detail is here: https://pytorch.org/get-started/previous-versions/
-    #"torch==2.7.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
-    #"torchvision==0.22.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torch==2.7.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
+    "torchvision==0.22.1+cu118 ; sys_platform == 'linux' and platform_machine == 'x86_64'",
 
     # Libraries in git not in pypi.
     #"lib1",
@@ -27,7 +31,6 @@ dependencies = [
     #"lib3",
 ]
 
-
 #[tool.setuptools]
 #packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } }  # Flat layout.
 # If the project is structured as "src layout" like
@@ -38,27 +41,23 @@ dependencies = [
 #     │     └─ ... 
 # packages = { find = { where = ["src"], include = ["<my_proj>", "<my_proj>.*"] } }
 
-
-#[tool.uv.sources]
-#torch = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
-#torchvision = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
+[tool.uv.sources]
+torch = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
+torchvision = [{ index = "torch-cuda", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'"}]
 #lib1 = { git = "<url/of/lib1_git_repo>", rev = "<commit ID>"}
 #lib2 = { path = "<path/to/dir>/lib2", editable = true }
 #lib3 = { path = "<path/to/dir>/lib3", editable = true }
 
-
-#[[tool.uv.index]]
-#name = "torch-cuda"
-#url = "https://download.pytorch.org/whl/cu118"
-#explicit = true
-
+[[tool.uv.index]]
+name = "torch-cuda"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
 
 [tool.uv]
 required-environments = [
     "sys_platform == 'linux' and platform_machine == 'x86_64'",
 ]
 #no-build-isolation-package = ["lib3"]
-
 
 # If no-build-isolation-package is used, lib3 cannnot create its own build-time environment.
 # This item makes root build lib3 within structuring time of root environment, 
@@ -68,7 +67,6 @@ required-environments = [
 #requires-dist = [
 #    <copy/contents/of/[build-system.requires]/of/lib3>
 #]
-
 
 # For pylance
 #[tool.pyright]
