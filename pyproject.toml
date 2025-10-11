@@ -28,8 +28,8 @@ dependencies = [
 ]
 
 
-[tool.setuptools]
-packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } }  # Flat layout.
+#[tool.setuptools]
+#packages = { find = { where = ["."], include = ["<my_proj>", "<my_proj>.*"] } }  # Flat layout.
 # If the project is structured as "src layout" like
 #     my_proj/
 #     ├─ src/
@@ -60,14 +60,14 @@ required-environments = [
 #no-build-isolation-package = ["lib3"]
 
 
-#[tool.uv.extra-build-dependencies]
-#lib3 = ["", ""]  # Write build dependencies such as "setuptools", "wheel"
-#lib3 = { requirement = ["", ""], match-runtime = true } # This will cause error somehow. Maybe problem of uv's version. 
-
-
-# If lib3 doesn't have [build-system] in its pyproject.toml.
+# If no-build-isolation-package is used, lib3 cannnot create its own build-time environment.
+# This item makes root build lib3 within structuring time of root environment, 
+# with awareness of lib3 build-time dependencies (, which is written in [build-system.requires] of lib3).
 #[[tool.uv.dependency-metadata]]
-#name = lib3
+#name = "lib3"
+#requires-dist = [
+#    <copy/contents/of/[build-system.requires]/of/lib3>
+#]
 
 
 # For pylance
