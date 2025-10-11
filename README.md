@@ -34,3 +34,12 @@ my_proj/
 # Emoji
 ├─ └─ │
 ✅❌🔥⚠️ℹ️🐛🚀😂❤️🤣😍😊🙏😘😎😢👍👏🎉🤔🙌😏😜😇🤗💕😱🤩🥰😔😌😴🤤🤮🤡💔🙇🤖
+
+# File sender
+## File sending from ssh server -> local PC.  
+### At terminal of local PC.
+```bash
+rsync -avP \
+  -e 'ssh -T -c chacha20-poly1305@openssh.com -o Compression=no -o IPQoS=throughput' \
+  ubuntu@lecun:/home/ubuntu/slocal/any_file .
+```
