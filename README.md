@@ -46,13 +46,13 @@ rsync -avP \
 
 # Camera convention
 ### World to Camera
-`Xcam = P Xworld`
+`Xcam = P Xworld`  
 `深度 = +z方向`
 - OpenCV
 - COLMAP
 - Viser
 ### Camera to World
-`Xworld = P Xcam`
+`Xworld = P Xcam`  
 `深度 = -z方向`
 - OpenGL
 - Blender
