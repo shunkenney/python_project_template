@@ -37,9 +37,23 @@ my_proj/
 
 # File sender
 ## File sending from ssh server -> local PC.  
-### At terminal of local PC.
+At terminal of local PC.
 ```bash
 rsync -avP \
   -e 'ssh -T -c chacha20-poly1305@openssh.com -o Compression=no -o IPQoS=throughput' \
   ubuntu@lecun:/home/ubuntu/slocal/any_file .
 ```
+
+# Camera convention
+### World to Camera
+`Xcam = P Xworld`
+`深度 = +z方向`
+- OpenCV
+- COLMAP
+- Viser
+### Camera to World
+`Xworld = P Xcam`
+`深度 = -z方向`
+- OpenGL
+- Blender
+- Nerfstudio
