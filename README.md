@@ -45,15 +45,14 @@ rsync -avP \
 ```
 
 # Camera convention
-### World to Camera
-`Xcam = P Xworld`  
-`深度 = +z方向`
-- OpenCV
-- COLMAP
-- Viser
-### Camera to World
-`Xworld = P Xcam`  
-`深度 = -z方向`
-- OpenGL
-- Blender
-- Nerfstudio
+## OpenCV: Right-handed coordinate
+### +X - Right, +Y - Down, +Z - Forward
+- COLMAP: World to Camera
+- MapAnything: Camera to World
+- Viser: Camera to World
+- VGGT: World to Camera
+- ViPE: Camera to World ?
+
+## OpenGL/Blender: Left-handed coordinate
+### +X - Right, +Y - Down, -Z - Forward
+- Nerfstudio: 未確認
